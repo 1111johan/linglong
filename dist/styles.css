@@ -2450,32 +2450,61 @@ h3 {
   line-height: 1.78;
 }
 
-.credential-index {
+.credential-brand-note {
+  position: relative;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 14px;
+  gap: 12px;
+  padding: 22px;
   border: 1px solid rgba(20, 99, 231, 0.14);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
+  background:
+    linear-gradient(135deg, rgba(15, 159, 149, 0.1), transparent 48%),
+    rgba(255, 255, 255, 0.9);
   box-shadow: 0 16px 38px rgba(20, 54, 92, 0.08);
 }
 
-.credential-index span {
-  display: grid;
-  gap: 4px;
-  min-height: 74px;
-  padding: 12px;
-  border: 1px solid rgba(217, 227, 234, 0.86);
-  border-radius: 8px;
-  color: #5f6f86;
-  font-size: 12px;
+.credential-brand-note::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: -40px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(20, 99, 231, 0.08);
+}
+
+.credential-brand-note span,
+.credential-brand-note h3,
+.credential-brand-note p {
+  position: relative;
+  z-index: 1;
+}
+
+.credential-brand-note span {
+  width: max-content;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #0f6760;
+  background: rgba(15, 159, 149, 0.1);
+  border: 1px solid rgba(15, 159, 149, 0.16);
+  font-size: 13px;
   font-weight: 900;
 }
 
-.credential-index strong {
-  color: var(--blue);
-  font-size: 24px;
+.credential-brand-note h3 {
+  margin: 0;
+  color: #102b58;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.18;
+}
+
+.credential-brand-note p {
+  margin: 0;
+  color: #5f6f86;
+  font-size: 15px;
+  line-height: 1.78;
 }
 
 .credential-feature {
@@ -6335,7 +6364,7 @@ h3 {
   .detail-grid.three,
   .detail-grid.four,
   .credential-archive-head,
-  .credential-index,
+  .credential-brand-note,
   .credential-feature,
   .credential-grid,
   .about-credential-band,
@@ -6615,7 +6644,7 @@ h3 {
   .advantage-score-grid,
   .download-shelves,
   .contact-router,
-  .credential-index,
+  .credential-brand-note,
   .compliance-ledger article {
     grid-template-columns: 1fr;
   }
