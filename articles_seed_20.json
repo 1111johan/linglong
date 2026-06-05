@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "《儿童青少年近视防控适宜技术指南（更新版）》及解读",
+    "category": "近视防控",
+    "source": "国家卫生健康委员会",
+    "date": "2021-10",
+    "summary": "国家层面的儿童青少年近视防控技术指南，适合机构了解筛查、干预和管理体系的权威参考。",
+    "url": "https://www.nhc.gov.cn/jkj/c100062/202110/a05ccaf5773a436486d2d79b59c0a5e9.shtml"
+  },
+  {
+    "id": 2,
+    "title": "《有阳光 有未来·防控近视科普常识》",
+    "category": "近视防控",
+    "source": "国家卫生健康委员会",
+    "date": "2021-05",
+    "summary": "面向学生、家长和教师的近视防控科普材料，可作为家长课堂和近视防控科普的基础外链。",
+    "url": "https://www.nhc.gov.cn/jkj/c100063/202105/49cd8db7e0ed4b3c8001f716359198cb.shtml"
+  },
+  {
+    "id": 3,
+    "title": "国家卫健委：全力加强儿童青少年近视防控",
+    "category": "近视防控",
+    "source": "人民网健康",
+    "date": "2025-05-31",
+    "summary": "围绕近视防控政策、0-6岁眼保健和视力检查、户外活动、电子屏幕控制等要点进行解读。",
+    "url": "https://health.people.com.cn/n1/2025/0531/c14739-40491719.html"
+  },
+  {
+    "id": 4,
+    "title": "呵护好孩子眼睛 共创光明的未来——教育部统筹推进儿童青少年近视防控工作综述",
+    "category": "政策动态",
+    "source": "中华人民共和国教育部",
+    "date": "2024-06-05",
+    "summary": "教育部关于儿童青少年近视防控工作的综述性内容，可作为行业政策与近视防控动态参考。",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/s5147/202406/t20240605_1134017.html"
+  },
+  {
+    "id": 5,
+    "title": "我国防控近视从“重治轻防”走向“科学干预”",
+    "category": "政策动态",
+    "source": "新华网 / 光明日报",
+    "date": "2025-09-25",
+    "summary": "从公共卫生和家庭认知角度阐述近视防控的科学干预趋势，适合作为行业观察类精选文章。",
+    "url": "https://www.zj.xinhuanet.com/20250925/a89b393510f74f88a304de8f51c94716/c.html"
+  },
+  {
+    "id": 6,
+    "title": "呵护心灵窗户 拥抱光明未来",
+    "category": "近视防控",
+    "source": "中国疾控中心相关科普页面",
+    "date": "2025-02-28",
+    "summary": "以通俗方式介绍近视概念、预防方法、户外活动、电子产品使用和定期检查等内容，适合家长阅读。",
+    "url": "https://tb.chinacdc.cn/2019rwjf/202502/t20250228_304604.html"
+  },
+  {
+    "id": 7,
+    "title": "注意，这些是近视的“信号”",
+    "category": "近视防控",
+    "source": "上海市儿童医院",
+    "date": "长期页面",
+    "summary": "介绍孩子可能出现的近视信号，以及家庭观察和医院检查建议，适合放在家长课堂栏目。",
+    "url": "https://www.shchildren.com.cn/contents/640/9217.html"
+  },
+  {
+    "id": 8,
+    "title": "闵行儿童近视数据出炉 近视防控任务任重道远",
+    "category": "近视防控",
+    "source": "复旦大学附属儿科医院",
+    "date": "长期页面",
+    "summary": "结合区域儿童近视数据、屈光发育档案和近视科普，适合机构了解儿童眼健康管理体系。",
+    "url": "https://ch.shmu.edu.cn/main/news/content/pid/17125.html"
+  },
+  {
+    "id": 9,
+    "title": "北京大学人民医院举办“全国爱眼日”系列活动",
+    "category": "行业动态",
+    "source": "北京大学人民医院",
+    "date": "长期页面",
+    "summary": "展示医院开展近视防控科普、健康咨询和儿童青少年眼健康教育的方式，可作为机构运营参考。",
+    "url": "https://www.pkuph.cn/news_details/25383.html"
+  },
+  {
+    "id": 10,
+    "title": "北京同仁医院斜视与小儿眼科介绍",
+    "category": "弱视斜视",
+    "source": "北京同仁医院",
+    "date": "长期页面",
+    "summary": "介绍斜视、弱视、屈光不正、视疲劳、调节集合障碍等儿童眼病和眼视光服务方向。",
+    "url": "https://www.bjtrhos.cn/Html/Departments/Main/Index_216.html"
+  },
+  {
+    "id": 11,
+    "title": "中国儿童弱视防治专家共识-2021",
+    "category": "弱视斜视",
+    "source": "中山大学中山眼科中心",
+    "date": "2021",
+    "summary": "儿童弱视防治相关专家共识，适合放入专业指南和弱视管理栏目，仅展示标题、来源和跳转链接。",
+    "url": "https://www.gzzoc.org.cn/node/13824"
+  },
+  {
+    "id": 12,
+    "title": "复旦大学附属眼耳鼻喉科医院小儿眼科与斜弱视学科介绍",
+    "category": "弱视斜视",
+    "source": "复旦大学附属眼耳鼻喉科医院相关页面",
+    "date": "长期页面",
+    "summary": "介绍小儿眼科与斜弱视学科、儿童斜视弱视和屈光不正诊疗方向，可作为专业背景类外链。",
+    "url": "https://www.youlai.cn/yyk/hospindex/91/departmentindex_87890.html"
+  },
+  {
+    "id": 13,
+    "title": "Keep an Eye on Your Child's Vision",
+    "category": "儿童视觉发育",
+    "source": "CDC",
+    "date": "长期页面",
+    "summary": "美国疾控机构关于儿童视力问题早期发现和综合眼科检查的科普，适合国际权威外链参考。",
+    "url": "https://www.cdc.gov/vision-health/prevention/youth-vision-problems.html"
+  },
+  {
+    "id": 14,
+    "title": "Amblyopia (Lazy Eye)",
+    "category": "弱视斜视",
+    "source": "National Eye Institute",
+    "date": "长期页面",
+    "summary": "美国国家眼科研究所关于弱视的基础科普，涵盖症状、原因、诊断和治疗方式，适合做国际参考。",
+    "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/amblyopia-lazy-eye"
+  },
+  {
+    "id": 15,
+    "title": "Myopia Control in Children",
+    "category": "近视防控",
+    "source": "American Academy of Ophthalmology",
+    "date": "长期页面",
+    "summary": "美国眼科学会关于儿童近视控制的科普页面，适合用于国际近视防控参考卡片。",
+    "url": "https://www.aao.org/eye-health/diseases/myopia-control-in-children"
+  },
+  {
+    "id": 16,
+    "title": "Amblyopia Preferred Practice Pattern",
+    "category": "专业指南",
+    "source": "American Academy of Ophthalmology",
+    "date": "2022",
+    "summary": "美国眼科学会弱视优选实践模式，偏专业指南，适合放在专业参考专区，避免面向家长过度解读。",
+    "url": "https://www.aao.org/education/preferred-practice-pattern/amblyopia-ppp-2022"
+  },
+  {
+    "id": 17,
+    "title": "Patient Resources",
+    "category": "儿童视觉发育",
+    "source": "AAPOS",
+    "date": "长期页面",
+    "summary": "美国儿童眼科与斜视协会患者资源页面，包含儿童眼病、视力筛查、斜视弱视等相关资源入口。",
+    "url": "https://aapos.org/patient/patient-resources"
+  },
+  {
+    "id": 18,
+    "title": "Lazy eye",
+    "category": "弱视斜视",
+    "source": "NHS",
+    "date": "长期页面",
+    "summary": "英国 NHS 关于弱视的公众科普页面，语言清晰，适合做弱视基础认知类外链。",
+    "url": "https://www.nhs.uk/conditions/lazy-eye/"
+  },
+  {
+    "id": 19,
+    "title": "Amblyopia (lazy eye) in children: parent information",
+    "category": "弱视斜视",
+    "source": "Cambridge University Hospitals NHS Foundation Trust",
+    "date": "长期页面",
+    "summary": "面向家长的儿童弱视说明，强调早期发现和治疗配合，适合作为家长科普外链。",
+    "url": "https://www.cuh.nhs.uk/patient-information/amblyopia-lazy-eye-in-children-parent-information/"
+  },
+  {
+    "id": 20,
+    "title": "Amblyopia",
+    "category": "弱视斜视",
+    "source": "Nemours KidsHealth",
+    "date": "长期页面",
+    "summary": "儿童健康科普平台关于弱视的家长版文章，适合补充弱视基础知识和家庭理解。",
+    "url": "https://kidshealth.org/en/parents/amblyopia.html"
+  }
+]

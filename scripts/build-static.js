@@ -18,6 +18,7 @@ const files = [
   "workflow.html",
   "styles.css",
   "script.js",
+  "articles_seed_20.json",
 ];
 const dirs = ["assets"];
 

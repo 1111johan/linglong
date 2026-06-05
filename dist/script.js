@@ -117,6 +117,18 @@ const revealTargets = [
   ".showcase-copy",
   ".showcase-board",
   ".feature-story",
+  ".product-core-title",
+  ".product-core-shell",
+  ".core-capability-grid article",
+  ".core-scenarios",
+  ".workflow-signal-board article",
+  ".contact-service-grid article",
+  ".solution-blueprint-grid article",
+  ".advantage-proof-grid article",
+  ".download-pack-grid article",
+  ".partner-enablement-grid article",
+  ".article-library-head",
+  ".article-filter",
 ].flatMap((selector) => [...document.querySelectorAll(selector)]);
 
 if (reduceMotion) {
@@ -311,6 +323,89 @@ observeOnce(document.querySelectorAll(".live-radar"), (canvas) => {
   }
   requestAnimationFrame(tick);
 });
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function normalizeArticleUrl(url) {
+  try {
+    return new URL(url, location.href).href;
+  } catch {
+    return "#";
+  }
+}
+
+function renderArticles(articles) {
+  const articleList = document.querySelector("#articleList");
+  const count = document.querySelector(".article-current-count");
+  if (!articleList) return;
+
+  if (count) count.textContent = String(articles.length);
+
+  if (!articles.length) {
+    articleList.innerHTML = '<div class="article-empty">当前分类暂无文章。</div>';
+    return;
+  }
+
+  articleList.innerHTML = articles
+    .map((article, index) => {
+      const safeUrl = normalizeArticleUrl(article.url);
+      return `
+        <article class="article-card" style="--article-delay: ${Math.min(index, 8) * 55}ms">
+          <div class="article-number">${String(article.id).padStart(2, "0")}</div>
+          <div class="article-tags">
+            <span>${escapeHtml(article.category)}</span>
+            <em>${escapeHtml(article.date)}</em>
+          </div>
+          <h3>${escapeHtml(article.title)}</h3>
+          <p>${escapeHtml(article.summary)}</p>
+          <div class="article-footer">
+            <small>${escapeHtml(article.source)}</small>
+            <a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">阅读原文</a>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+async function loadScienceArticles() {
+  const articleList = document.querySelector("#articleList");
+  const filterButtons = [...document.querySelectorAll(".filter-btn")];
+  if (!articleList) return;
+
+  try {
+    const response = await fetch("./articles_seed_20.json");
+    if (!response.ok) throw new Error(`Failed to load articles: ${response.status}`);
+    const articles = await response.json();
+
+    renderArticles(articles);
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset.category || "全部";
+        filterButtons.forEach((item) => {
+          const isActive = item === button;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", String(isActive));
+        });
+
+        renderArticles(category === "全部" ? articles : articles.filter((article) => article.category === category));
+      });
+    });
+  } catch (error) {
+    articleList.innerHTML = '<div class="article-empty">文章加载失败，请稍后再试。</div>';
+    console.error(error);
+  }
+}
+
+loadScienceArticles();
 
 function attachRuntimeCanvas(container) {
   if ((!richMotionEnabled && reduceMotion) || container.querySelector(".runtime-canvas")) return;
@@ -633,9 +728,56 @@ function attachRuntimeCanvas(container) {
     }
   }
 
+  function drawProductCore(time) {
+    ctx.clearRect(0, 0, width, height);
+    const sweep = (time / 24) % Math.max(width, 1);
+    ctx.fillStyle = "rgba(15, 159, 149, 0.08)";
+    ctx.fillRect(sweep, 0, 2, height);
+
+    const lanes = [
+      [0.06, 0.2, 0.34, 0.11, 0.58, 0.22, 0.9, 0.2],
+      [0.12, 0.72, 0.36, 0.62, 0.62, 0.82, 0.86, 0.66],
+      [0.2, 0.42, 0.44, 0.34, 0.62, 0.48, 0.78, 0.38],
+    ];
+
+    lanes.forEach((lane, index) => {
+      const [sx, sy, c1x, c1y, c2x, c2y, ex, ey] = lane;
+      ctx.beginPath();
+      ctx.moveTo(sx * width, sy * height);
+      ctx.bezierCurveTo(c1x * width, c1y * height, c2x * width, c2y * height, ex * width, ey * height);
+      ctx.strokeStyle = index % 2 ? "rgba(20, 99, 231, 0.14)" : "rgba(15, 159, 149, 0.16)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      const progress = (time / (1800 + index * 260) + index * 0.24) % 1;
+      const x = (1 - progress) ** 3 * sx * width
+        + 3 * (1 - progress) ** 2 * progress * c1x * width
+        + 3 * (1 - progress) * progress ** 2 * c2x * width
+        + progress ** 3 * ex * width;
+      const y = (1 - progress) ** 3 * sy * height
+        + 3 * (1 - progress) ** 2 * progress * c1y * height
+        + 3 * (1 - progress) * progress ** 2 * c2y * height
+        + progress ** 3 * ey * height;
+      ctx.beginPath();
+      ctx.arc(x, y, 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = index % 2 ? "rgba(20, 99, 231, 0.68)" : "rgba(15, 159, 149, 0.72)";
+      ctx.fill();
+    });
+
+    for (let i = 0; i < 18; i += 1) {
+      const x = (i * 113 + time / 30) % Math.max(width, 1);
+      const y = height * (0.12 + ((i * 29) % 78) / 100);
+      ctx.beginPath();
+      ctx.arc(x, y, 1.8 + (i % 3) * 0.6, 0, Math.PI * 2);
+      ctx.fillStyle = i % 2 ? "rgba(20, 99, 231, 0.18)" : "rgba(15, 159, 149, 0.22)";
+      ctx.fill();
+    }
+  }
+
   function draw(time) {
     const drawers = {
       "home-clinical": drawHomeClinical,
+      "product-core": drawProductCore,
       "product-hero": drawNetwork,
       "solutions-hero": drawRoutes,
       "scenarios-hero": drawRadarSweep,
