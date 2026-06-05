@@ -111,6 +111,11 @@ const revealTargets = [
   ".mission-panel > div",
   ".verification-card",
   ".verification-aside",
+  ".credential-archive-head",
+  ".credential-feature",
+  ".credential-card",
+  ".about-credential-copy",
+  ".about-credential-stack img",
   ".contact > div",
   ".contact-form",
   ".motion-window",
@@ -406,6 +411,49 @@ async function loadScienceArticles() {
 }
 
 loadScienceArticles();
+
+function initCredentialPreview() {
+  const modal = document.querySelector("#credentialModal");
+  const modalImage = document.querySelector("#credentialModalImage");
+  const modalTitle = document.querySelector("#credentialModalTitle");
+  const closeButton = document.querySelector("[data-credential-close]");
+  const triggers = [...document.querySelectorAll("[data-credential-src]")];
+
+  if (!modal || !modalImage || !modalTitle || !triggers.length) return;
+
+  function closeModal() {
+    if (typeof modal.close === "function" && modal.open) modal.close();
+    modalImage.removeAttribute("src");
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const source = trigger.dataset.credentialSrc;
+      const title = trigger.dataset.credentialTitle || "资质文件";
+      if (!source) return;
+
+      modalTitle.textContent = title;
+      modalImage.src = source;
+      modalImage.alt = title;
+
+      if (typeof modal.showModal === "function") {
+        modal.showModal();
+      } else {
+        window.open(source, "_blank", "noopener,noreferrer");
+      }
+    });
+  });
+
+  closeButton?.addEventListener("click", closeModal);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal();
+  });
+  modal.addEventListener("close", () => {
+    modalImage.removeAttribute("src");
+  });
+}
+
+initCredentialPreview();
 
 function attachRuntimeCanvas(container) {
   if ((!richMotionEnabled && reduceMotion) || container.querySelector(".runtime-canvas")) return;
