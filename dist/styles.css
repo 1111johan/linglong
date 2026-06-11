@@ -329,7 +329,7 @@ p {
 
 h1 {
   margin: 0;
-  font-size: 68px;
+  font-size: clamp(30px, 3vw, 46px);
   line-height: 1.04;
   letter-spacing: 0;
 }
@@ -438,10 +438,10 @@ h3 {
 .page-hero {
   position: relative;
   overflow: hidden;
-  min-height: 52vh;
+  min-height: 320px;
   display: grid;
   align-items: end;
-  padding: 128px 48px 76px;
+  padding: 108px 48px 64px;
   color: #ffffff;
   background:
     radial-gradient(circle at 82% 22%, rgba(15, 159, 149, 0.35), transparent 30%),
@@ -482,15 +482,17 @@ h3 {
 }
 
 .page-hero p {
-  max-width: 860px;
+  max-width: 760px;
   color: rgba(255, 255, 255, 0.84);
-  font-size: 22px;
-  line-height: 1.68;
+  font-size: 17px;
+  line-height: 1.8;
 }
 
 .page-hero h1 {
-  max-width: 1120px;
-  font-size: clamp(42px, 5vw, 68px);
+  max-width: 860px;
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.16;
+  font-weight: 800;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -2739,6 +2741,31 @@ h3 {
   gap: 16px;
 }
 
+.qualifications {
+  background:
+    linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+}
+
+.qualification-core-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px 0 16px;
+}
+
+.qualification-secondary-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.qualification-core-grid .credential-thumb {
+  aspect-ratio: 4 / 3;
+}
+
+.qualification-secondary-grid .credential-thumb {
+  aspect-ratio: 4 / 3;
+  padding: 14px;
+}
+
 .credential-card {
   overflow: hidden;
   border: 1px solid rgba(20, 99, 231, 0.14);
@@ -3127,7 +3154,7 @@ h3 {
 .home-page h1 {
   max-width: 720px;
   color: #092654;
-  font-size: clamp(50px, 5.6vw, 86px);
+  font-size: clamp(42px, 4.5vw, 58px);
   line-height: 1.08;
   font-weight: 900;
 }
@@ -6323,6 +6350,7 @@ h3 {
   .feature-story-grid,
   .detail-grid.three,
   .detail-grid.four,
+  .qualification-core-grid,
   .credential-grid,
   .verification-mini-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -6518,6 +6546,7 @@ h3 {
   .credential-brand-note,
   .credential-feature,
   .credential-grid,
+  .qualification-core-grid,
   .about-credential-band,
   .mission-panel,
   .project-intro-panel,
