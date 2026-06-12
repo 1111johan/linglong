@@ -870,7 +870,7 @@ h3 {
 .product-core-title h2 {
   margin: 0;
   color: #08233d;
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(25px, 2.8vw, 36px);
 }
 
 .product-core-title p:last-child {
@@ -2410,7 +2410,7 @@ h3 {
 }
 
 .company-profile-block h2 {
-  font-size: clamp(30px, 3vw, 42px);
+  font-size: clamp(24px, 2.8vw, 34px);
 }
 
 .copy-stack p:first-child {
@@ -2715,7 +2715,7 @@ h3 {
 
 .credential-feature-copy h3 {
   color: #ffffff;
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(24px, 2.8vw, 34px);
   line-height: 1.16;
 }
 

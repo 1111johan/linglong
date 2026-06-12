@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="昤昽医疗">
+  <defs>
+    <linearGradient id="g" x1="12" y1="10" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1463e7"/>
+      <stop offset="1" stop-color="#0f9f95"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <path d="M17 18h30v28H17V18Zm6 6v16h18V24H23Zm4 4h10v4H27v-4Zm0 7h14v4H27v-4Z" fill="#fff" opacity=".94"/>
+  <circle cx="47" cy="18" r="5" fill="#9be6df"/>
+</svg>
